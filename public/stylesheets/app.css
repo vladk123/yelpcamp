@@ -1,3 +1,26 @@
+body{
+    /* background-color: olive; */
+    background-color: #a6b397;
+    background-image: url('/images/forest-silhouette.png');
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+}
+
+.bg-translucent{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: saddlebrown;
+    border-width: 9px;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.7);
+    /* z-index: 2; */
+}
+
+.container{
+    z-index: 2;
+}
+
 #cluster-map {
     width: 100%;
     height: 500px;
@@ -6,4 +29,32 @@
 #map {
     width: 100%;
     height: 300px;
+}
+
+.btn{
+    background-color: green;
+    border-color: forestgreen;
+
+}
+
+.btn-curved{
+    border-radius: 20px 5px;
+}
+
+.btn:hover{
+    background-color: olive;
+    border-color: olivedrab;
+}
+
+nav.navbar{
+    background-color: #013804;
+}
+
+.nav-logo{
+    width: 80px;
+    height: auto;
+}
+
+footer.footer{
+    background-color: #013804;
 }

@@ -16,14 +16,24 @@
         <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         <link rel="stylesheet" href="/stylesheets/app.css">
+        <link rel="stylesheet" href="/stylesheets/leaves.css">
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> <!-- Favicon -->
     </head>
 
     <body class="d-flex flex-column vh-100">
         <%- include('../partials/navbar')%>
-        <main class="container mt-5">
+        <!-- falling leaves animation -->
+        <div class="leaves">
+            <% for(let i=0; i < 15; i++){ %>
+                <i></i>
+            <% } %>
+        </div>
+        <main class="container my-5">
             <%- include('../partials/flash')%>
-            <%- body %>
+            <div class="bg-translucent p-2 p-md-5">
+                <%- body %>
+            </div>
+
         </main>
         <%- include('../partials/footer')%>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

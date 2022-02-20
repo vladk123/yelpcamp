@@ -1,4 +1,7 @@
 <% layout('layouts/boilerplate')%>
+
+<link rel="stylesheet" href="/stylesheets/stars.css">
+
 <div id="cluster-map"></div>
 <br>
 <div class="container">
@@ -23,11 +26,28 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title"><%= campground.title %> </h5>
+                    <!-- average out reviews and show if exist -->
+                    <% 
+                        let ratingTotal = 0 
+                        let ratingCount = 0 
+                        let ratingAvg 
+                        if (campground.reviews.length > 0){ 
+                            for(review of campground.reviews){ 
+                                ratingCount++ 
+                                ratingTotal = ratingTotal + review.rating
+                            } %>
+                            <p class="starability-result" data-rating="<%=Math.round(ratingTotal/ratingCount)%>">
+                                Rated: <%= ratingTotal/ratingCount %> stars
+                            </p>
+                    <% }
+                    %>
+                    
+                    
                     <p class="card-text"><%= campground.description %></p>
                     <p class="card-text">
                         <small class="text-muted"><%= campground.location%></small>
                     </p>
-                    <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
+                    <a class="btn btn-primary btn-curved" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
                 </div>
             </div>
         </div>

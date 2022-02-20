@@ -1,5 +1,6 @@
 const Campground = require('../models/campground');
 const Review = require('../models/review');
+const sendEmail = require('../utils/send_email');
 
 // creating review
 module.exports.createReview = async (req, res, next) => {
@@ -9,6 +10,7 @@ module.exports.createReview = async (req, res, next) => {
     campground.reviews.push(review);
     await review.save();
     await campground.save();
+    await sendEmail(undefined,undefined,`New Yelp Review - ${review._id}`, "emails/newReview.ejs", {campground})
     req.flash('success', 'Created new review!');
     res.redirect(`/campgrounds/${campground._id}`);
 }

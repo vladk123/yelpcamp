@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const sendEmail = require('../utils/send_email');
 
 // form for new user
 module.exports.renderRegister = (req, res, next) => {
@@ -11,6 +12,7 @@ module.exports.register = async (req, res, next) => {
         const { email, username, password } = req.body;
         const user = new User({ email, username });
         const registeredUser = await User.register(user, password);
+        await sendEmail(undefined,undefined,`New Yelp User - ${user._id}`, "emails/newUser.ejs", {user})
         req.login(registeredUser, err => {
             if (err) return next(err);
             req.flash('success', 'Welcome to YelpCamp!');

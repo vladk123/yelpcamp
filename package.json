@@ -8,7 +8,7 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "vlad",
   "license": "ISC",
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.11.0",

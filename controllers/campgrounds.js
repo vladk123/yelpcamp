@@ -6,7 +6,13 @@ const { cloudinary } = require("../cloudinary");
 const sendEmail = require('../utils/send_email');
 
 module.exports.index = async (req, res, next) => {
-    const campgrounds = await Campground.find({}).sort({'date': -1}).limit(10).populate('popupText');
+    const campgrounds = await Campground.find({}).sort({'date': -1}).limit(10).populate('popupText').populate({
+        path: 'reviews',
+        populate: {
+            path: 'author',
+        },
+        perDocumentLimit: 3
+    });
     res.render('campgrounds/index', {campgrounds})
 }
 
