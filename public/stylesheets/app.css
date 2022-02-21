@@ -7,6 +7,27 @@ body{
     background-repeat: repeat-x;
 }
 
+/* unvisited link */
+a:link {
+    color: #7ca5c5;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #c6cfd6;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #a1c0d9;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #e9f3fa;
+  }
+
 .bg-translucent{
     background-color: rgba(255, 255, 255, 0.8);
     border-color: saddlebrown;
