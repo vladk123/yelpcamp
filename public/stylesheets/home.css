@@ -11,7 +11,7 @@ body {
 
 /* unvisited link */
 a:link {
-    color: #7ca5c5;
+    color: #c6cfd6;
     text-decoration: none;
   }
   
@@ -22,12 +22,22 @@ a:link {
   
   /* mouse over link */
   a:hover {
-    color: rgb(255, 255, 255);
+    color: #a1c0d9;
   }
   
   /* selected link */
   a:active {
     color: #e9f3fa;
+  }
+
+  /* for light backgrounds */
+  a:link.darker-link{
+    color: #61696e;
+    text-decoration: none;
+  }
+  a:visited.darker-link{
+    color: #61696e;
+    text-decoration: none;
   }
 
 .home-logo{
@@ -82,3 +92,4 @@ a:link {
     background-color: olive;
     border-color: olivedrab;
   }
+

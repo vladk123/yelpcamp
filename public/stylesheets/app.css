@@ -9,7 +9,7 @@ body{
 
 /* unvisited link */
 a:link {
-    color: #7ca5c5;
+    color: #c6cfd6;
     text-decoration: none;
   }
   
@@ -26,6 +26,16 @@ a:link {
   /* selected link */
   a:active {
     color: #e9f3fa;
+  }
+
+  /* for light backgrounds */
+  a:link.darker-link{
+    color: #61696e;
+    text-decoration: underline;
+  }
+  a:visited.darker-link{
+    color: #61696e;
+    text-decoration: underline;
   }
 
 .bg-translucent{
