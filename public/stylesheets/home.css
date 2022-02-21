@@ -55,3 +55,9 @@ body {
     background-color: olive;
     border-color: olivedrab;
 }
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    box-shadow: none;
+    outline:none;
+    background-color: olive;
+    border-color: olivedrab;
+  }

@@ -1,3 +1,4 @@
+// if not in production, require the dotenv package
 if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
@@ -40,6 +41,15 @@ app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
+// if in production, check that it's on https (otherwise redirect to https)
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+      if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`)
+      else
+        next()
+    })
+}
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
