@@ -1,6 +1,12 @@
 /* leaf animations */
 
-.leaves {position:relative;top:-50px;width:90%;text-align: right;}
+.leaves {
+    position:fixed;
+    top:-50px;
+    width:95%;
+    text-align: right;
+    overflow:visible;
+}
 
 .leaves i {
     display: inline-block;
@@ -17,12 +23,12 @@
 }
 
 .leaves i:nth-of-type(2n) { 
-    -webkit-animation: falling2 5s 0s infinite; 
-    animation: falling2 5s 0s infinite;
+    -webkit-animation: falling2 7s 0s infinite; 
+    animation: falling2 7s 0s infinite;
 }
 .leaves i:nth-of-type(3n) {
-     -webkit-animation: falling3 5s 0s infinite; 
-     animation: falling3 5s 0s infinite;
+     -webkit-animation: falling3 6s 0s infinite; 
+     animation: falling3 6s 0s infinite;
     }
 
 .leaves i:before {
@@ -152,7 +158,8 @@
     }
     100% {
         -webkit-transform:
-            translate3d(-350px,700px,0)
+            /* translate3d(-350px,700px,0) */
+            translate3d(-65vw,85vh,0)
             rotate(90deg);
         opacity: 0;
     }
@@ -165,10 +172,40 @@
     }
     100% {
         -webkit-transform:
-            translate3d(-350px,700px,0)
+            /* translate3d(-350px,700px,0) */
+            translate3d(-65vw,85vh,0)
             rotate(90deg);
         opacity: 0;
     }
+}
+
+@-webkit-keyframes falling2 {
+    0% {
+       -webkit-transform:
+           translate3d(0,0,0)
+           rotate(90deg);
+   }
+   100% {
+       -webkit-transform:
+           /* translate3d(-400px,680px,0) */
+           translate3d(-30vw,87vh,0)
+           rotate(0deg);
+       opacity: 0;
+   }
+}
+@keyframes falling2 {
+    0% {
+       -webkit-transform:
+           translate3d(0,0,0)
+           rotate(90deg);
+   }
+   100% {
+       -webkit-transform:
+           /* translate3d(-400px,680px,0) */
+           translate3d(-30vw,87vh,0)
+           rotate(0deg);
+       opacity: 0;
+   }
 }
 
 @-webkit-keyframes falling3 {
@@ -179,7 +216,8 @@
     }
     100% {
         -webkit-transform:
-            translate3d(-230px,640px,0)
+            /* translate3d(-230px,640px,0) */
+            translate3d(-10vw,95vh,0)
             rotate(-70deg);
         opacity: 0;
     }
@@ -192,35 +230,9 @@
     }
     100% {
         -webkit-transform:
-            translate3d(-230px,640px,0)
+            /* translate3d(-230px,640px,0) */
+            translate3d(-10vw,95vh,0)
             rotate(-70deg);
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes falling2 {
-     0% {
-        -webkit-transform:
-            translate3d(0,0,0)
-            rotate(90deg);
-    }
-    100% {
-        -webkit-transform:
-            translate3d(-400px,680px,0)
-            rotate(0deg);
-        opacity: 0;
-    }
-}
-@keyframes falling2 {
-     0% {
-        -webkit-transform:
-            translate3d(0,0,0)
-            rotate(90deg);
-    }
-    100% {
-        -webkit-transform:
-            translate3d(-400px,680px,0)
-            rotate(0deg);
         opacity: 0;
     }
 }

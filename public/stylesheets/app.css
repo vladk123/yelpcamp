@@ -57,4 +57,5 @@ nav.navbar{
 
 footer.footer{
     background-color: #013804;
+    z-index: 2;
 }
