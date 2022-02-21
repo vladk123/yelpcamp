@@ -37,6 +37,13 @@ body{
 
 }
 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    box-shadow: none;
+    outline:none;
+    background-color: olive;
+    border-color: olivedrab;
+  }
+
 .btn-curved{
     border-radius: 20px 5px;
 }
