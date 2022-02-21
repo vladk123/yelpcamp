@@ -44,9 +44,9 @@
             </ul>
             <%  if( currentUser && campground.author.equals(currentUser._id))  {%>
             <div class="card-body">
-                <a class="card-link btn btn-info" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
+                <a class="card-link btn" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
                 <form class="d-inline" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn">Delete</button>
                 </form>
             </div>
             <% } %>
@@ -87,11 +87,13 @@
                         Great!
                     </div>
                 </div>
-                <button class="btn btn-success">Submit</button>
+                <button class="btn">Submit</button>
             </form>
         <% } %>
         <h3 class="py-3">Latest Reviews</h2>
-        <p><strong>Note:</strong> if you see any inappropriate content below, <a class="darker-link" href="mailto:vlad.kapitantchouk@gmail.com?subject=Inappropriate%20Review&body=http://yelpcamp.ca/campgrounds/<%=campground._id%>">please contact me asap!</a></p>
+        <% if(campground.reviews.length){ %>
+            <p><strong>Note:</strong> if you see any inappropriate content below, <a class="darker-link" href="mailto:vlad.kapitantchouk@gmail.com?subject=Inappropriate%20Review&body=http://yelpcamp.ca/campgrounds/<%=campground._id%>"><strong>please contact me asap!</strong></a></p>
+        <% } %>
         <% if(!currentUser){ %>
             <p>To leave a review, please login or register.</p>
         <% } %>
@@ -109,7 +111,7 @@
                     <p class="card-text">Review: <%= review.body %></p>
                     <%  if( currentUser && review.author.equals(currentUser._id))  {%>
                         <form action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm">Delete</button>
                         </form>
                     <% } %>
                 </div>

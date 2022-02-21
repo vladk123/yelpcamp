@@ -12,7 +12,7 @@ const ejs = require('ejs');
 const path = require('path'); //get rid of this, just testing
 
 
-module.exports = (senderEmail = process.env.MAIL_GUN_FROM, recepientEmail = 'chilly731@hotmail.com', emailSubject = 'PropSked', emailTemplateFile, emailEjsTemplateData) => {
+module.exports = (senderEmail = 'chilly731@hotmail.com', recepientEmail = 'vlad.k123@hotmail.com', emailSubject = 'PropSked', emailTemplateFile, emailEjsTemplateData) => {
     return new Promise((resolve, reject) => {
         try{
             ejs.renderFile(path.join(__dirname, '../', '/views/', emailTemplateFile), emailEjsTemplateData, (err, html) => { //emailEjsTemplateData for passing variables through to the ejs file
@@ -20,15 +20,15 @@ module.exports = (senderEmail = process.env.MAIL_GUN_FROM, recepientEmail = 'chi
                     console.log(err)
                 }
                 const data = {
-                    from: senderEmail,
-                    to: 'chilly731@hotmail.com',
+                    from: senderEmail || 'chilly731@hotmail.com',
+                    to: recepientEmail || 'vlad.k123@hotmail.com',
                     subject: emailSubject,
                     html: html
                 };
                 try{
                     mg.messages().send(data, async function (err) {
                         if(err) {
-                            throw new Error ("Hm, an error occurred when trying to send an email: " + err)
+                            throw new Error ("Hm, an error occurred when trying to do this...Kindly try again or contact me if this is recurring.")
                         }
                         console.log("Email sent to " + recepientEmail);
 

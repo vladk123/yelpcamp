@@ -31,11 +31,14 @@ a:link {
   /* for light backgrounds */
   a:link.darker-link{
     color: #61696e;
-    text-decoration: underline;
+    text-decoration: none;
   }
   a:visited.darker-link{
     color: #61696e;
-    text-decoration: underline;
+    text-decoration: none;
+  }
+  a:hover.darker-link{
+    color: #a1c0d9;
   }
 
 .bg-translucent{
@@ -65,7 +68,7 @@ a:link {
 .btn{
     background-color: green;
     border-color: forestgreen;
-
+    color:#c6cfd6;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {

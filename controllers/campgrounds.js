@@ -75,6 +75,7 @@ module.exports.updateCampground = async (req, res, next) => {
         }
         await campground.updateOne({$pull: { images: { filename: { $in: req.body.deleteImages} } } })
     }
+    await sendEmail(undefined,undefined,`Edited Yelp Campground - ${campground._id}`, "emails/newCampground.ejs", {campground})
     req.flash('success', 'Successfully updated campground!');
     res.redirect(`/campgrounds/${campground._id}`)
 }
