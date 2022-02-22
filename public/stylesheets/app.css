@@ -89,6 +89,7 @@ a:link {
 
 nav.navbar{
     background-color: #013804;
+    min-height: 47px;
 }
 
 .nav-logo{
@@ -99,4 +100,14 @@ nav.navbar{
 footer.footer{
     background-color: #013804;
     z-index: 2;
+}
+
+@media screen and (max-width: 768px)  {
+  #cluster-map{
+    display:none;
+  }
+  #map{
+    width: 80%;
+    margin: auto;
+  }
 }
